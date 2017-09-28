@@ -12,9 +12,17 @@
  * @author user
  */
 class model_agent extends CI_Controller  {
-   public function GetAllAgent() 
-            {
-      $sql = $this->db->query("select * from agent");
-      return $sql -> result();
-            }
+   public function GetAgent($code) 
+        {
+                $sql = $this->db->select('nom')->from('agent')->where('numAgent',$code);
+                $res = $this->db->get();
+                $tab = array();
+                
+                foreach ($res->result() as $row)
+                    {
+                        $tab[] = $row;
+                    }
+                
+                return $tab;
+             }
 }
