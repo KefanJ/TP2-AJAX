@@ -17,38 +17,32 @@ and open the template in the editor.
                function()
                 {
                     $("input[name='formation']").click(function(){
-                        afficherLesFormationInformatique($(this).click());
+                       afficherLesFormation($(this).val());
                     });
                 }
              );
              </script>
     </head>
     <body>
-       <?php
-        echo "<h4>".$titre.'</h4><br>';
-        foreach ($LesFormationInformatique as $formation)
+        
+        <?php
+         echo "<h4>".$titre.'</h4><br>';  
+         echo "<div id='divEnteteFormation'>";
+        foreach ($Lesformations as $formation)      
             {
-        ?>
+       ?>  
         <div class="divFormation">
-            
-            <FORM>
-            <SELECT name="form" size="1">
-            <OPTION>Exploitation
-            <OPTION>Traction
-            <OPTION>Matériel
-            <OPTION>Gestion
-            <OPTION>Voyageurs
-            <OPTION>Informatique    
-            </SELECT>
-             </FORM>            
-            <input type="submit" name="formation" value="<?php echo $formation->numeroActivite; ?>"><?php echo $formation->intitule; ?>
-
-         </div>
-         <?php   
-        }
-        echo "</div>";
-        ?>
-        <br><br>
-        <div id="divActiviter"></div>
+            <input type="radio" name="formation" value="<?php echo $formation->numeroActivite ; ?>"><?php echo $formation->intitule ; ?>
+        </div>
+        <?php
+            }
+            echo "</div>";
+        ?>   
+        <br><br>     
+       
+        <div id ="divAgents"></div>
+         
+      
+        
     </body>
 </html>

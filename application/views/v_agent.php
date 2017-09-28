@@ -5,27 +5,26 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-        <FORM>
-<SELECT name="nom" size="1">
-<OPTION>lundi
-</OPTION>
-</SELECT>
-     </FORM>      
+<head>
+<title></title>
+
+<link rel="stylesheet" href="<?php echo base_url();?>CSS/styles.css">
+  <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
+           <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>  
+</head>
+<body>
+            
         <?php
-      
+      echo "<h1>Les agent</h1>";
+      echo"<div id='divEnteteAgent'>";
         foreach ($LesAgents as $agent)
             {
-        ?>
-        <p><?php echo $agent->nom; ?>" ><br>  <?php echo $agent->prenom ; ?>></p>
-         <?php   
-        }
+            echo " <div class='divAgent'>";
+                echo "<span>".$agent->nom."</span>";
+                echo"</div>";
+            }
+            echo "</div>";
+           
         ?>
         
     </body>

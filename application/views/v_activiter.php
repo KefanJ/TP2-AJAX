@@ -9,51 +9,36 @@ and open the template in the editor.
         <title>SNCF</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
-         
          <script type="text/javascript">
             
-            
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
+             $
+           (
+               function()
+                {
+                    $("input[name='formation']").click(function(){
+                       afficherLesFormation($(this).val());
+                    });
+                }
+             );
              </script>
+ 
     </head>
-    <body>
-        <h4>Choix activité</h4>
-        <form>
-            <select name="nom" size="1">
-                <option> 
-                    Exploitation
-                <option> 
-                    Traction
-                    <option> 
-                    Matériel
-                    <option> 
-                  Gestion
-                    <option> 
-                    Voyageur
-                    <option> 
-                    Informatique
-                </option>
-            </select>
-        </form>
-            
-            <?php
-        
-        foreach ($LesAtiviters as $activite)
+     <body>
+         <h1>Choix Activter</h1>
+         <select id="lstActiviters">
+       <?php
+         echo "<h4>".$titre.'</h4><br>';       
+        foreach ($LesActiviters as $activite)      
             {
-        ?>
-      
-         <?php   
-        }
-        ?>
+            echo "<option id='opt1' value='".$activite->numero."'>".$activite->libelle."</option>";
+            }
+        ?> 
+    
+         </select><br>
+       
+        <br><br>
+       
     </body>
 </html>
