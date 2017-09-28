@@ -17,7 +17,11 @@ and open the template in the editor.
            (
                function()
                 {
-                    $("input[name='formation']").click(function(){
+                    
+                    $("#lstActivites").change(function(){
+                    
+                    // Ce ne sont pas des input mais une liste
+                    //$("input[name='formation']").click(function(){
                        afficherLesFormation($(this).val());
                     });
                 }
@@ -27,7 +31,7 @@ and open the template in the editor.
     </head>
      <body>
          <h1>Choix Activter</h1>
-         <select id="lstActiviters">
+         <select id="lstActivites">
        <?php
          echo "<h4>".$titre.'</h4><br>';       
         foreach ($LesActiviters as $activite)      
@@ -37,8 +41,9 @@ and open the template in the editor.
         ?> 
     
          </select><br>
-       
+         
         <br><br>
-       
+        <div id="divFormations"></div>
+        <div id="divAgents"></div>
     </body>
 </html>

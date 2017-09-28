@@ -1,19 +1,19 @@
 
-function afficherLesFormation()
+function afficherLesFormation(numeroActivite)
     {
         $.ajax(
         {  
             type:"get",
-            url:"index.php/CtrlAcceuil/AfficherFormation",
+            url:"index.php/CtrlAcceuil/afficherLesFormations",
             data:"numeroActivite="+numeroActivite,
-             sucess:function(data)
+             success:function(data)
             {
-                $('#divAgents').empty();
-                $('#divAgents').append(data);
+                $('#divFormations').empty();
+                $('#divFormations').append(data);
             },
             error:function()
             {
-                alet('Erreur');
+                alert('Erreur');
             }
         }
         );

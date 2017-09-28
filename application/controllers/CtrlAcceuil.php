@@ -26,7 +26,7 @@ class CtrlAcceuil extends CI_Controller {
                  $numeroActivite = $_GET['numeroActivite'];
                 $model = $this->load->model('model_formation');
                 $data['lesFormations'] = $this->model_formation->GetFormation($numeroActivite);
-                $this->load->view('AfficherFormation',$data); 
+                $this->load->view('v_formation',$data); 
             }  
             public function afficherLesAgents()
             {

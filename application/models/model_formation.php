@@ -14,7 +14,7 @@
 class model_formation extends CI_Model {
      public function GetFormation($numeroActivite)
              {
-                $sql = $this->db->select('intitule')->from('formation')->where('numFormation',$numeroActivite);
+                $sql = $this->db->select('code,intitule')->from('formation')->where('numeroActivite',$numeroActivite);
                 $res = $this->db->get();
                 $tab = array();
                 
