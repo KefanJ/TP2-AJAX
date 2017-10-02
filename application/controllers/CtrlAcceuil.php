@@ -30,10 +30,10 @@ class CtrlAcceuil extends CI_Controller {
             }  
             public function afficherLesAgents()
             {
-                 $code = $_GET['code'];
+                 $numeroFormation = $_GET['numeroFormation'];
                 $model = $this->load->model('model_agent');
-                $data['lesAgents'] = $this->model_agent->GetAgent($code);
-                $this->load->view('AfficherAgent',$data); 
+                $data['lesAgents'] = $this->model_agent->GetAgent($numeroFormation);
+                $this->load->view('v_agent',$data); 
             }  
                       
                       
