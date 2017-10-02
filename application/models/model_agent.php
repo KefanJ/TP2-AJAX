@@ -14,15 +14,12 @@
 class model_agent extends CI_Model {
    public function GetAgent($numeroFormation) 
         {
-                $sql = $this->db->query("SELECT prenom,nom FROM agent, inscription WHERE Agent.code = inscription.codeAgent and numFormation='".$numeroFormation."'");
+                $sql = $this->db->query("SELECT prenom,nom FROM agent, inscription WHERE Agent.code = inscription.codeAgent and numeroFormation='".$numeroFormation."'");
                
-                $tab = array();
+         
                 
-                foreach ($sql->result() as $row)
-                    {
-                        $tab[] = $row;
-                    }
+              
                 
-                return $tab;
+                return $sql->result();
              }
 }
