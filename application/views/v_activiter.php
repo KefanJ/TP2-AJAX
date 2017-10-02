@@ -24,7 +24,15 @@ and open the template in the editor.
                     //$("input[name='formation']").click(function(){
                        afficherLesFormation($(this).val());
                     });
+                    
+                    $('#divFormations').change
+                    (
+                            function(){afficherLesAgent($(this).val());
+                    }
+                            );
                 }
+                       
+                        
              );
              </script>
  
