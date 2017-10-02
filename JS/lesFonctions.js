@@ -18,4 +18,26 @@ function afficherLesFormation(numeroActivite)
         }
         );
     }
+    
+    function afficherLesAgent(numeroFormation)
+    {
+        $.ajax(
+        {  
+            type:"get",
+            url:"index.php/CtrlAcceuil/afficherLesAgents",
+            data:"numeroFormation="+numeroFormation,
+             success:function(data)
+            {
+                $('#divAgents').empty();
+                $('#divAgents').append(data);
+            },
+            error:function()
+            {
+                alert('Erreur2');
+            }
+        }
+        );
+    }
+    
+    
    
